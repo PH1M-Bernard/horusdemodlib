@@ -42,6 +42,8 @@ user.cfg
 # cmake
 build
 
+#uv
+uv.lock
 
 .venv/
 venv/
