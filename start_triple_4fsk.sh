@@ -78,8 +78,8 @@ else
 	exit 1
 fi
 
-# Use a local venv if it exists
-VENV_DIR=venv
+# Use a local .venv if it exists
+VENV_DIR=.venv
 if [ -d "$VENV_DIR" ]; then
     echo "Entering venv."
     source $VENV_DIR/bin/activate
