@@ -43,6 +43,7 @@ user.cfg
 build
 
 
+.venv/
 venv/
 __pycache__/*
 *.pyc
