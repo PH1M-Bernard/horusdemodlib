@@ -1,6 +1,13 @@
 # Project Horus's Telemetry Demodulator Library
 
-![Horus Binary Modem FFT](https://github.com/projecthorus/horusdemodlib/raw/master/doc/modem_fft.jpg)
+This is a fork from https://github.com/projecthorus/horusdemodlib
+
+Changes:
+
+*Use uv instead of pip (speed)
+*Fix for dropped support of ATLAS in Debian Pixie
+
+![Horus Binary Modem FFT](https://github.com/PH1M-Bernard/horusdemodlib/raw/master/doc/modem_fft.jpg)
 Above: Spectrogram of the Horus Binary 4-FSK modem signal.
 
 ## What is it?
@@ -31,14 +38,14 @@ This contains the demodulator portions of horuslib, which are written in C.
 The library can be built and installed using:
 
 ```console
-$ git clone https://github.com/projecthorus/horusdemodlib.git
+$ git clone https://github.com/PH1M-Bernard/horusdemodlib.git
 $ cd horusdemodlib && mkdir build && cd build
 $ cmake ..
 $ make
 $ sudo make install
 ```
 
-Refer to the [install guide](https://github.com/projecthorus/horusdemodlib/wiki/1.2--Raspberry-Pi-'Headless'-RX-Guide) for a more complete guide, including what dependencies are required.
+Refer to the [install guide](https://github.com/PH1M-Bernard/horusdemodlib/wiki/Raspberry-Pi-'Headless'-RX-Guide) for a more complete guide, including what dependencies are required.
 
 ### Testing
 Unit tests for the various demodulators can be run using:
@@ -57,9 +64,9 @@ and then following the build steps above from the `cd horusdemodlib` line.
 
 
 ### API Reference
-The main demodulator API is [horus_api.h](https://github.com/projecthorus/horusdemodlib/blob/master/src/horus_api.h). An example of it in use in a C program is available in [horus_demod.c](https://github.com/projecthorus/horusdemodlib/blob/master/src/horus_demod.c)
+The main demodulator API is [horus_api.h](https://github.com/PH1M-Bernard/horusdemodlib/blob/master/src/horus_api.h). An example of it in use in a C program is available in [horus_demod.c](https://github.com/PH1M-Bernard/horusdemodlib/blob/master/src/horus_demod.c)
 
-A Python wrapper is also available (via the horusdemodlib Python library which is also part of this repository). An example of its use is available [here](https://github.com/projecthorus/horusdemodlib/blob/master/horusdemodlib/demod.py#L379).
+A Python wrapper is also available (via the horusdemodlib Python library which is also part of this repository). An example of its use is available [here](https://github.com/PH1M-Bernard/horusdemodlib/blob/master/horusdemodlib/demod.py#L379).
 
 
 ## HorusDemodLib Python Library
@@ -69,34 +76,18 @@ The horusdemodlib Python library contains decoders for the different Project Hor
 
 It also contains a wrapper around the C library (mentioned above), which contains the Horus modem demodulators.
 
-The easiest way to install horusdemodlib is via pypi:
+The easiest way to install horusdemodlib is via uv:
 ```
-$ pip install horusdemodlib
+$ uv sync
 ```
-
-If you want to install directly from this repository, you can run:
-```
-$ pip install -r requirements.txt
-$ pip install -e .
-```
-(Note - this has some issues relating to setuptools currently... use pip)
 
 ### Updating
-If you have installed horusdemodlib via pypi, then you can run (from within your venv, if you are using one):
-```
-$ pip install -U horusdemodlib
-```
-This will also install any new dependencies.
 
-
-If you have installed 'directly', then you will need to run:
 ```
 $ git stash 
 $ git pull
-$ pip install -r requirements.txt
-$ pip install -e .
+$ uv sync
 ```
-(Note - this has some issues relating to setuptools currently... use pip)
 
 
 ## Further Reading
