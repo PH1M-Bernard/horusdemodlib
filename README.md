@@ -4,8 +4,12 @@ This is a fork from https://github.com/projecthorus/horusdemodlib
 
 Changes:
 
-*Use uv instead of pip (speed)
-*Fix for dropped support of ATLAS in Debian Pixie
+* Use uv instead of pip (speed)
+* Fix for dropped support of ATLAS in Debian Pixie
+
+
+[install guide](https://github.com/PH1M-Bernard/horusdemodlib/wiki/Raspberry-Pi-'Headless'-RX-Guide) 
+  
 
 ![Horus Binary Modem FFT](https://github.com/PH1M-Bernard/horusdemodlib/raw/master/doc/modem_fft.jpg)
 Above: Spectrogram of the Horus Binary 4-FSK modem signal.
